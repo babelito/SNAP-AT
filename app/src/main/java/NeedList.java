@@ -9,16 +9,18 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.arthur.snap_at.R;
+
 /**
  * Created by Arthur on 02/10/2017.
  */
 
 public class NeedList extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.need_list);
     }
 }
