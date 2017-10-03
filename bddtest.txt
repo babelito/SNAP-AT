@@ -1,0 +1,37 @@
+INSERT INTO Utilisateur VALUES 
+( 'abitbol@gfi.fr','abitbol') , 
+('jacques@gfi.fr,'jacques'),
+( 'steven@gfi.fr','steven'),
+('peter@gfi.fr','peter'),
+('dave@gfi.fr','dave'),
+('joel@gfi.fr','joel');
+
+
+
+INSERT INTO Besoins VALUES 
+('2012/12/12','DDE','Dédé','Devis intervention',"Devis pour l'intervention sur le réseau",'Assiduité, Envie, Flemme','3','2','2012/12/13','Montpellier','250000','pret_DDE.pdf','open') ,
+('2015/09/28','Crédit Agricole','Mr Sacha Touille','Financement campagne','Financement de la campagne publicitaire','Responsabilité, professionnalisme, confiance','6','1','2015/09/29','Paris VI','500000','financement_CA.pdf','open') ,
+('2018/10/10','AXA','Mme Charlotte Egaronne','Installation','Ensemble des installations effectuées','Assurance, rapidité, efficacité','1','3','2017/12/20','Paris XV','23500','installation_axa.pdf','Win') ,
+('1999/12/25','Microsoft','Mr Bill Gates','Assistance','Moyens mis en oeuvre pour faire débuguer Windows','Convivial, simple, stable','24','7','2017/12/26','Redmond','25000000','debug.pdf','Fail') ,
+('2017/10/02','EPSI','Mme Fournol','Workshop','Demande à des étudiants de programmer une application interne GRATUITEMENT pour GFI','Rapidité, compétence, professionnalisme','1','5','2017/10/07','Montpellier','0','EPSI.pdf','open') ,
+
+
+INSERT INTO Gere (mail, title) VALUES 
+('abitbol@gfi.fr','Devis intervention'),
+('abitbol@gfi.fr','Assistance'),
+('abitbol@gfi.fr','Workshop'),
+('joel@gfi.fr','Workshop'),
+('jacques@gfi.fr','Workshop'),
+('jacques@gfi.fr','Financement campagne'),
+('dave@gfi.fr','Financement campagne'),
+('peter@gfi.fr','Devis intervention'),
+('steven@gfi.fr','Installation'),
+('peter@gfi.fr','Installation');
+
+
+SELECT Besoins . * 
+FROM Gere, Besoins
+WHERE Gere.title = Besoins.title
+AND Gere.mail =  'abitbol@gfi.fr'
+LIMIT 0 , 30 ;
+
