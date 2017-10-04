@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mer 04 Octobre 2017 à 10:44
+-- Généré le: Mer 04 Octobre 2017 à 11:28
 -- Version du serveur: 5.5.37
 -- Version de PHP: 5.6.19-1~dotdeb+7.1
 
@@ -27,6 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `Besoins` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` date NOT NULL,
   `client` varchar(40) NOT NULL,
   `contactName` varchar(40) NOT NULL,
@@ -41,19 +42,20 @@ CREATE TABLE IF NOT EXISTS `Besoins` (
   `descriptionFile` text NOT NULL,
   `status` varchar(4) NOT NULL,
   `derniereModif` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`title`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Contenu de la table `Besoins`
 --
 
-INSERT INTO `Besoins` (`date`, `client`, `contactName`, `title`, `fullDescription`, `3MainKeySuccessFactors`, `durationMonth`, `durationDaysAWeek`, `startAtTheLatest`, `location`, `rate`, `descriptionFile`, `status`, `derniereModif`) VALUES
-('1999-12-25', 'Microsoft', 'Mr Bill Gates', 'Assistance', 'Moyens mis en oeuvre pour faire débuguer Windows', 'Convivial, simple, stable', 24, 7, '2017-12-26', 'Redmond', 25000000, 'debug.pdf', 'Fail', '2017-10-04 07:36:32'),
-('2012-12-12', 'DDE', 'Dédé', 'Devis intervention', 'Devis pour l''intervention sur le réseau', 'Assiduité, Envie, Flemme', 3, 2, '2012-12-13', 'Montpellier', 250000, 'pret_DDE.pdf', 'open', '2017-10-04 07:36:32'),
-('2015-09-28', 'Crédit Agricole', 'Mr Sacha Touille', 'Financement campagne', 'Financement de la campagne publicitaire', 'Responsabilité, professionnalisme, confiance', 6, 1, '2015-09-29', 'Paris VI', 500000, 'financement_CA.pdf', 'open', '2017-10-04 07:36:32'),
-('2018-10-10', 'AXA', 'Mme Charlotte Egaronne', 'Installation', 'Ensemble des installations effectuées', 'Assurance, rapidité, efficacité', 1, 3, '2017-12-20', 'Paris XV', 23500, 'installation_axa.pdf', 'Win', '2017-10-04 07:36:32'),
-('2017-10-02', 'EPSI', 'Mme Fournol', 'Workshop', 'Demande à des étudiants de programmer une application interne GRATUITEMENT pour GFI', 'Rapidité, compétence, professionnalisme', 1, 5, '2017-10-07', 'Montpellier', 0, 'EPSI.pdf', 'open', '2017-10-04 07:36:32');
+INSERT INTO `Besoins` (`id`, `date`, `client`, `contactName`, `title`, `fullDescription`, `3MainKeySuccessFactors`, `durationMonth`, `durationDaysAWeek`, `startAtTheLatest`, `location`, `rate`, `descriptionFile`, `status`, `derniereModif`) VALUES
+(1, '1999-12-25', 'Microsoft', 'Mr Bill Gates', 'Assistance', 'Moyens mis en oeuvre pour faire débuguer Windows', 'Convivial, simple, stable', 24, 7, '2017-12-26', 'Redmond', 25000000, 'debug.pdf', 'Fail', '2017-10-04 07:36:32'),
+(2, '2012-12-12', 'DDE', 'Dédé', 'Devis intervention', 'Devis pour l''intervention sur le réseau', 'Assiduité, Envie, Flemme', 3, 2, '2012-12-13', 'Montpellier', 250000, 'pret_DDE.pdf', 'open', '2017-10-04 07:36:32'),
+(3, '2015-09-28', 'Crédit Agricole', 'Mr Sacha Touille', 'Financement campagne', 'Financement de la campagne publicitaire', 'Responsabilité, professionnalisme, confiance', 6, 1, '2015-09-29', 'Paris VI', 500000, 'financement_CA.pdf', 'open', '2017-10-04 07:36:32'),
+(4, '2018-10-10', 'AXA', 'Mme Charlotte Egaronne', 'Installation', 'Ensemble des installations effectuées', 'Assurance, rapidité, efficacité', 1, 3, '2017-12-20', 'Paris XV', 23500, 'installation_axa.pdf', 'Win', '2017-10-04 07:36:32'),
+(5, '2017-10-02', 'EPSI', 'Mme Fournol', 'Workshop', 'Demande à des étudiants de programmer une application interne GRATUITEMENT pour GFI', 'Rapidité, compétence, professionnalisme', 1, 22, '2017-10-07', 'Montpellier', 0, 'EPSI.pdf', 'open', '2017-10-04 07:36:32');
 
 -- --------------------------------------------------------
 
