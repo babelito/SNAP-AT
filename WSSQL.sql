@@ -40,6 +40,7 @@ CREATE TABLE IF NOT EXISTS `Besoins` (
   `rate` float NOT NULL,
   `descriptionFile` text NOT NULL,
   `status` varchar(4) NOT NULL,
+	`derniereModif` timestamp NOT NULL DEFAULT CURRENT-TIMESTAMP,
   PRIMARY KEY (`title`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
